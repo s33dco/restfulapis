@@ -14,7 +14,7 @@
 //
 // with async
 
-const notifyClient = async (id) => {
+const getAndSend = async (id) => {
   try {
     const customer = await getCustomer(id);
     console.log('Customer: ', customer);
@@ -31,9 +31,9 @@ const notifyClient = async (id) => {
   }
 }
 
-notifyClient(1);
+getAndSend(1);
 
-function getCustomer(id) {
+function getCustomer (id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
@@ -57,7 +57,7 @@ function getTopMovies() {
 function sendEmail(email, movies) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve();
+      resolve('Email sent....');
     }, 4000);
   })
 }
