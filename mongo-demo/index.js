@@ -53,7 +53,7 @@ const courseSchema = new mongoose.Schema({
       }
     });
 
-const Course = mongoose.model('Course', courseSchema);
+const Course = new mongoose.model('Course', courseSchema);
 
 createCourse = async () => {
   try {
